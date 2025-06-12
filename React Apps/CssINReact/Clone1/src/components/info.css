@@ -1,0 +1,84 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 800px;
+    margin: 100px auto;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    height: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.left{
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+
+}
+
+.steps{
+    display: flex;
+    align-items: center;
+}
+
+.sno{
+    background-color: blue;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.selected{
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+}
+
+.rightcontent{
+    padding: 10px 20px;
+
+}
+.rightcontent h4{
+    color: gray;
+    font-weight: bold;
+}
+
+.right{
+    padding: 20px 50px;
+    position: relative;
+}
+.right div{
+    margin-bottom: 20px;
+    gap: 10px;
+}
+.right h1{
+    color: blue;
+}
+.right h3{
+    color: rgb(116, 116, 253);
+}
+
+.right input{
+    padding: 13px;
+    padding-right: 200px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+button{
+    position: absolute;
+    right: 110px;
+    bottom: 20px;
+    padding: 13px 20px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+

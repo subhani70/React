@@ -1,0 +1,10 @@
+#demo{
+    color: red;
+    background-color: yellow;
+}
+
+.box{
+    width: 400px;
+    border:2px solid black;
+    padding: 20px;
+}
