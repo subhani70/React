@@ -67,7 +67,7 @@ const Cards = () => {
         {courses.map((course, index) => (
           <div
             key={index}
-            className="  rounded-xl overflow-hidden shadow-md border bg-white flex flex-col h-full"
+            className="group  rounded-xl overflow-hidden shadow-md border bg-white flex flex-col h-full"
           >
             {/* Card top */}
             <div className={`p-6 bg-gradient-to-r ${course.bgColor} relative min-h-[130px]`}>
@@ -91,7 +91,7 @@ const Cards = () => {
                 <span className="flex items-center gap-1 text-green-700 font-medium">
                   <FaChartLine /> {course.interested} interested Geeks
                 </span>
-                <span className="text-green-700 font-semibold cursor-pointer hover:underline">
+                <span className="text-green-700 font-semibold cursor-pointer hover:underline group-hover:bg-green-700 group-hover:text-white px-2 rounded-[10px] py-1 duration-400">
                   Explore now
                 </span>
               </div>

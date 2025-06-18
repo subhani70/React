@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="flex w-full max-w-3xl items-center bg-[#f7fffb] border border-gray-400 rounded-xl px-4 py-3 mb-6">
         <input
           type="text"
-          placeholder="D"
+          placeholder="Learn Java , React "
           className="flex-1 bg-transparent outline-none text-lg placeholder-gray-400"
         />
         <FaSearch className="text-green-700 text-xl cursor-pointer" />
