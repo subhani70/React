@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
 
             {/* Bottom Sub Nav */}
-            <div className="w-full overflow-x-auto whitespace-nowrap px-6 py-2 text-sm border-t border-gray-200">
+            <div className="w-full  px-6 py-2 text-sm border-t border-gray-200">
                 <ul className="flex items-center gap-6">
                     {subLinks.map((item, idx) => (
                         <li key={idx} className="text-gray-700 hover:text-green-600 cursor-pointer">
