@@ -36,7 +36,8 @@ const ExpandingCards = () => {
                         let { title, imgurl } = cards;
                         return (
                             <>
-                                <div className={`card ${activeIndex === i ? "active" : ""}`}
+                                <div key={i}
+                                    className={`card ${activeIndex === i ? "active" : ""}`}
                                     onClick={() => {
                                         handleActiveIndex(i);
                                     }}
