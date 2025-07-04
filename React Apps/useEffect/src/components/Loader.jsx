@@ -2,8 +2,8 @@ import React from 'react'
 
 const Loader = () => {
     return (
-        <div className='flex justify-center items-center min-h-screen w-[90vw]'>
-        <span class="loader"></span>
+        <div className='flex justify-center items-center h-[90vh] w-[85vw]'>
+            <span className="loader"></span>
         </div>
     )
 }

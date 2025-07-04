@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const Controlled = () => {
     let [username, setUsername] = useState();
@@ -12,6 +13,11 @@ const Controlled = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({ username, email, password, address, branch, gender, skills });
+        if (username == "") {
+            toast.error("Username is Mandatory")
+        } else {
+            toast.success("Form submitted Successfully")
+        }
         setUsername("");
         setEmail("");
         setPassword("");
@@ -19,7 +25,6 @@ const Controlled = () => {
         setBranch("");
         setGender("");
         setSkills([]);
-
     }
 
     const handleChange = (e) => {
