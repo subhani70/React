@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Loader from './Loader';
 
 const User = () => {
     const [users, setUsers] = useState([]);
@@ -19,7 +18,7 @@ const User = () => {
         <>
             <h1 className='text-8xl bg-gray-100 text-center pt-[40px] '>Github Users</h1>
             <section className="grid grid-cols-3 gap-6 p-[100px] bg-gray-100 min-h-screen">
-                {users.length > 0 ? users.map((user) => {
+                {users.map((user) => {
                     const { avatar_url, login, id, html_url } = user;
                     return (
 
@@ -43,7 +42,7 @@ const User = () => {
                             </a>
                         </div>
                     );
-                }) : <Loader />}
+                })}
             </section>
         </>);
 };
