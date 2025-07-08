@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { } from 'react'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams, } from 'react-router-dom';
 import { toast } from 'react-toastify';
-const CreateCourse = () => {
-    let navigate = useNavigate();//! it will returns the function which help use to
-                                 //  navigate after performig the operation
-    const [title, setTitle] = useState('');
-    const [trainers, setTrainers] = useState(['']);
-    const [subjects, setSubjects] = useState(['']);
-    const [fees, setFees] = useState('');
-    const [duration, setDuration] = useState('');
-    const [location, setLocation] = useState('');
-    const [img, setImg] = useState('');
+const EditCourse = () => {
+
+    // let [singleCourse, setSingleCourse] = useState()
+
+
+    let { id } = useParams()
+    let loc = useLocation();
+
+    console.log(loc.state);
+    let { title: coursetitle, duration: cduration, trainers: ctrainers, subjects: asubjects, fees: fee, location: address, img: imgurl } = loc.state
+
+
+
+    let navigate = useNavigate();
+    const [title, setTitle] = useState(coursetitle);
+    const [trainers, setTrainers] = useState(ctrainers);
+    const [subjects, setSubjects] = useState(asubjects);
+    const [fees, setFees] = useState(fee);
+    const [duration, setDuration] = useState(cduration);
+    const [location, setLocation] = useState(address)
+    const [img, setImg] = useState(imgurl);
 
     const handleTrainerChange = (index, value) => {
         const updated = [...trainers];
@@ -33,6 +44,9 @@ const CreateCourse = () => {
         setSubjects([...subjects, '']);
     };
 
+    console.log(title);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -48,8 +62,8 @@ const CreateCourse = () => {
 
         console.log(data);
 
-        const res = await fetch('http://localhost:3000/courses', {
-            method: 'POST',
+        const res = await fetch(`http://localhost:3000/courses/${id}`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -63,15 +77,15 @@ const CreateCourse = () => {
         setDuration('');
         setLocation('');
         setImg('');
-        const result = await res.json();
-        console.log('Course created:', result);
-        toast.success("course created successfully");
+        // const result = await res.json();
+        // console.log('Course created:', result);
+        toast.success("course updated successfully");
     };
 
 
     return (
         <section className='bg-gray-700 text-white w-[600px] mx-auto mt-10 rounded-2xl px-10 py-10'>
-            <h1 className='text-4xl text-center mb-6'>Create New Course</h1>
+            <h1 className='text-4xl text-center mb-6'>Edit Course</h1>
             <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
 
                 <input type="text" placeholder="Course Title" value={title} onChange={(e) => setTitle(e.target.value)}
@@ -119,11 +133,11 @@ const CreateCourse = () => {
                 <input type="text" placeholder="Image URL" value={img} onChange={(e) => setImg(e.target.value)}
                     className='bg-white text-black px-3 py-2 rounded' />
 
-                <input type="submit" value="Create Course"
+                <input type="submit" value="Update Course"
                     className='bg-blue-500 px-5 py-3 rounded mt-5 mx-auto w-1/2 cursor-pointer hover:bg-blue-600 transition' />
             </form>
         </section>
     );
 }
 
-export default CreateCourse;
+export default EditCourse;
